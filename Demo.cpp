@@ -68,46 +68,4 @@ int main()
     {
         cout << e.what() << endl; // Should print "The number of columns in the first matrix must be equal to the number of rows in the second matrix."
     }
-
-    cout << "***********************************************" << endl;
-
-    vector<vector<int>> gr1 = {
-        {0, 4},
-        {4, 0}};
-    ariel::Graph g6;
-    g6.loadGraph(gr1); // Load the graph to the object.
-
-    vector<vector<int>> gr2 = {
-        {0, 1},
-        {1, 0}};
-    ariel::Graph g7;
-    g7.loadGraph(gr2); // Load the graph to the object.
-
-    cout << "g6 < g7 =? " << (g6 < g7) << endl; // Should print "0"
-
-    cout << "***********************************************" << endl;
-    cout << g6;
-    cout << "***********************************************" << endl;
-    g6 = --g6;
-    cout << ++g6;
-
-
-    cout << "***********************************************" << endl;
-
-    ariel::Graph g8;
-    vector<vector<int>> gr8 = {
-        {0, 1},
-        {1, 0}};
-    g8.loadGraph(gr8);
-
-    ariel::Graph g9;
-    vector<vector<int>> gr9 = {
-        {0, 1},
-        {1, 1}};
-    g9.loadGraph(gr9);
-    if(g8.isSubGraph(g9)){
-        cout << "is a subgraph" << endl;
-    } else {
-        cout << "is not a subgraph" << endl;
-    }
 }
