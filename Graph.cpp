@@ -145,6 +145,7 @@ Graph& Graph::operator++()
             matrix[i][j]++;
         }
     }
+    (*this).updateMembers();
     return *this;
 }
 
@@ -156,6 +157,7 @@ Graph Graph::operator++(int)
             matrix[i][j]++;
         }
     }
+    (*this).updateMembers();
     return result;
 }
 
@@ -166,6 +168,7 @@ Graph& Graph::operator--()
             matrix[i][j]--;
         }
     }
+    (*this).updateMembers();
     return *this;
 
 }
@@ -178,6 +181,7 @@ Graph Graph::operator--(int)
             matrix[i][j]--;
         }
     }
+    (*this).updateMembers();
     return result;
 
 }
@@ -356,6 +360,11 @@ void Graph::loadGraph(const vector<vector<int>> &graph)
         for (const auto& row : graph) {
             if (row.size() != (size_t)n) {
                 throw std::invalid_argument("Invalid graph: The graph is not a square matrix.");
+            }
+        }
+        for (size_t j = 0; j < n; j++) {
+            if (matrix[j][j] == 0) {
+                throw std::invalid_argument("Invalid graph: non zero on diagonal");
             }
         }
         this->matrix = graph;

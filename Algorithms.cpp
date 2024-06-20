@@ -339,16 +339,14 @@ string Algorithms::negativeCycle(Graph &g)
         dis[(size_t)source] = 0;
 
         //realx edges repeatedly V - 1 times
-        for (size_t i = 0; i < numVertices - 1; i++) {
-            for (size_t j = 0; j < numVertices; j++) {
-                for (size_t k = 0; k < numVertices; k++) {
-                    if (graph[j][k] != 0 && dis[j] != INT_MAX && dis[j] + graph[j][k] < dis[k]) {
-                        if(!g.getIsDirected())
-                            if((size_t)parent[j] == k)
-                                continue;
-                        dis[k] = dis[j] + graph[j][k];
-                        parent[k] = j;
-                    }
+        for (size_t j = 0; j < numVertices; j++) {
+            for (size_t k = 0; k < numVertices; k++) {
+                if (graph[j][k] != 0 && dis[j] != INT_MAX && dis[j] + graph[j][k] < dis[k]) {
+                    if(!g.getIsDirected())
+                        if((size_t)parent[j] == k)
+                            continue;
+                    dis[k] = dis[j] + graph[j][k];
+                    parent[k] = j;
                 }
             }
         }
