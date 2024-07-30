@@ -61,33 +61,33 @@ namespace ariel
         // Declaration of the operators
         
         // arritmatics operators
-        Graph operator+(const Graph& other) const;
-        Graph& operator+=(const Graph& other);
-        Graph operator+() const;
-        Graph operator-(const Graph& other) const;
-        Graph& operator-=(const Graph& other);
-        Graph operator-() const;
+        Graph operator+(const Graph& other) const; // g1 + g2
+        Graph& operator+=(const Graph& other); // g1 += g2
+        Graph operator+() const; // +g
+        Graph operator-(const Graph& other) const; // g1 - g2
+        Graph& operator-=(const Graph& other); // g1 -= g2
+        Graph operator-() const; // -g
 
         // comparison operators
-        bool operator==(const Graph& other) const;
-        bool operator!=(const Graph& other) const;
-        bool operator<(const Graph& other) const;
-        bool operator<=(const Graph& other) const;
-        bool operator>(const Graph& other) const;
-        bool operator>=(const Graph& other) const;
+        bool operator==(const Graph& other) const; // g1 == g2
+        bool operator!=(const Graph& other) const; // g1 != g2
+        bool operator<(const Graph& other) const; // g1 < g2
+        bool operator<=(const Graph& other) const; // g1 <= g2
+        bool operator>(const Graph& other) const; // g1 > g2
+        bool operator>=(const Graph& other) const; // g1 >= g2
 
         // increment and decrement operators
-        Graph& operator++(); // Prefix increment
-        Graph operator++(int); // Postfix increment
-        Graph& operator--(); // Prefix decrement
-        Graph operator--(int); // Postfix decrement
+        Graph& operator++(); // Prefix increment: ++g
+        Graph operator++(int); // Postfix increment: g++
+        Graph& operator--(); // Prefix decrement: --g
+        Graph operator--(int); // Postfix decrement: g--
 
         // assignment operators
-        Graph operator*(int scalar) const;
-        Graph operator*(const Graph& other) const;
-        Graph& operator*=(int scalar);
-        Graph operator/(double scalar) const;
-        Graph& operator/=(double scalar);
+        Graph operator*(int scalar) const; // g * 2
+        Graph operator*(const Graph& other) const; // g1 * g2
+        Graph& operator*=(int scalar); // g *= 2
+        Graph operator/(double scalar) const; // g / 2.0
+        Graph& operator/=(double scalar); // g /= 2.0
 
 
         friend std::ostream& operator<<(std::ostream& os, const Graph& graph);
