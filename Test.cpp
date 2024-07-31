@@ -1,3 +1,6 @@
+
+// extream tests: is connected, is contains cycle
+
 #include "doctest.h"
 #include "Algorithms.hpp"
 #include "Graph.hpp"
